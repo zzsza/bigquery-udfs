@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_num_hexagons(res NUMERIC)
+ RETURNS NUMERIC
+ LANGUAGE js AS
+"""
+return h3.numHexagons(res);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

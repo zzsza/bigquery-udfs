@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_compact(h3_set ARRAY<STRING>)
+ RETURNS ARRAY<STRING>
+ LANGUAGE js AS
+"""
+return h3.compact(h3_set);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

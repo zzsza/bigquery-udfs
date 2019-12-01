@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION hi.kyle.ST_H3_BOUNDARY(h3_index STRING) AS (
+	ST_GEOGFROMGEOJSON(hi.kyle.h3_to_geojson_boundary(h3_index))
+);

@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_is_valid(h3_index STRING)
+ RETURNS BOOLEAN
+ LANGUAGE js AS
+"""
+return h3.h3IsValid(h3_index);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

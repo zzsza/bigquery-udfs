@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_to_geowkt(h3_index STRING)
+  RETURNS STRING
+  LANGUAGE js AS
+"""
+var p = h3.h3ToGeo(h3_index);
+return "POINT("+p[1]+" "+p[0]+")";
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

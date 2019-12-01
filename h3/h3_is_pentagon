@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_is_pentagon(h3_index STRING)
+ RETURNS BOOLEAN
+ LANGUAGE js AS
+"""
+return h3.h3IsPentagon(h3_index);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

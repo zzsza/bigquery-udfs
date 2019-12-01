@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_hex_area(res NUMERIC,unit STRING)
+ RETURNS NUMERIC
+ LANGUAGE js AS
+"""
+return h3.hexArea(res,unit);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

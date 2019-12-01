@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_edge_length(res NUMERIC,unit STRING)
+ RETURNS NUMERIC
+ LANGUAGE js AS
+"""
+return h3.edgeLength(res,unit);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_indexes_are_neighbors(origin STRING,destination STRING)
+ RETURNS BOOLEAN
+ LANGUAGE js AS
+"""
+return h3.h3_indexesAreNeighbors(origin,destination);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);

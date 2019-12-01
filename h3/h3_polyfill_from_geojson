@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION hi.kyle.h3_polyfill_from_geojson(geojson STRING, resolution NUMERIC)
+ RETURNS ARRAY<STRING>
+ LANGUAGE js AS
+"""
+var pol =JSON.parse(geojson)
+return h3.polyfill(pol.coordinates[0],resolution,true);
+"""
+OPTIONS (
+  library=[gs://'your_path.js]
+);
