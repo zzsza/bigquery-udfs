@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION hi.kyle.h3_to_geojson_boundary(h3_index STRING)
+CREATE OR REPLACE FUNCTION your_project_id.your_dataset.h3_to_geojson_boundary(h3_index STRING)
   RETURNS STRING
   LANGUAGE js AS
 """
@@ -10,5 +10,5 @@ var geojson = {
 return JSON.stringify(geojson);
 """
 OPTIONS (
-  library=[gs://'your_path.js]
+  library=['gs://file_path']
 );
