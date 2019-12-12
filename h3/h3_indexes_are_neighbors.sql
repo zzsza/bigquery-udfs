@@ -2,7 +2,7 @@ CREATE OR REPLACE FUNCTION your_project_id.your_dataset.h3_indexes_are_neighbors
  RETURNS BOOLEAN
  LANGUAGE js AS
 """
-return h3.h3_indexesAreNeighbors(origin,destination);
+return h3.h3IndexesAreNeighbors(origin,destination);
 """
 OPTIONS (
   library=['gs://file_path']
